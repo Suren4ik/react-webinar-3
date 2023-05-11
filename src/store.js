@@ -46,7 +46,7 @@ class Store {
     const newCode = this.generateUniqueCode();
     this.setState({
       ...this.state,
-      list: [...this.state.list, { code: newCode, title: 'Новая запись' }]
+      list: [...this.state.list, { code: newCode, title: 'Новая запись', selectionCounter: 0 }]
     })
   };
 
@@ -70,7 +70,8 @@ class Store {
       ...this.state,
       list: this.state.list.map(item => ({
         ...item,
-        selected: item.code === code ? !item.selected : false
+        selected: item.code === code ? !item.selected : false,
+        selectionCounter: item.code === code && !item.selected ? item.selectionCounter + 1: item.selectionCounter
       }))
     });
   }
