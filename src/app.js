@@ -6,7 +6,7 @@ import './styles.css';
  * @param store {Store} Хранилище состояния приложения
  * @returns {React.ReactElement}
  */
-function App({store}) {
+function App({ store }) {
 
   const list = store.getState().list;
 
@@ -36,7 +36,7 @@ function App({store}) {
           )}
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
