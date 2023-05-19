@@ -34,12 +34,14 @@ function App({ store }) {
       <Head title='Магазин' />
       <Controls list={list} onOpenModal={callbacks.onOpenModal} />
       <List list={list}
-        onClick={callbacks.onAddProduct} />
+        onClick={callbacks.onAddProduct}
+        title='Добавить' />
 
       {isModalOpen && (
-        <Modal onClose={callbacks.onCloseModal} list={list.filter(item => item.selected)} onDelete={callbacks.onDeleteProduct}>
-          {/* Содержимое модального окна */}
-        </Modal>
+        <Modal onClose={callbacks.onCloseModal} 
+               list={list.filter(item => item.selected)} 
+               onDelete={callbacks.onDeleteProduct}
+               isModalOpen={isModalOpen} />
       )}
     </PageLayout>
   );

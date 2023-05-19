@@ -32,10 +32,19 @@
 }
 
 .modal-res {
+    display: flex;
+    justify-content: flex-end;
     margin-bottom: 130px;
-    padding: 20px, 120px, 89px, 690px;
 }
 
-.modal-res span {
+.modal-res div {
     font-weight: 700;
+}
+
+.modal-res :first-child {
+    margin-right: 53px;
+}
+
+.modal-res :last-child {
+    margin-right: 110px;
 }

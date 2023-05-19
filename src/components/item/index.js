@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { addSpacesToNumber } from "../../utils";
 import './style.css';
@@ -18,7 +18,14 @@ function Item(props) {
       <div className='Item-title'>
         {props.item.title}
       </div>
-      <div className='Item-price'>{addSpacesToNumber(props.item.price)} ₽</div>
+      <div className='Item-descr'>
+        <div className="Item-price">
+          {addSpacesToNumber(props.item.price)} ₽
+        </div>
+        {
+          props.isModalOpen ? <div className="Item-qty">{props.item.count} шт</div> : null
+        }
+      </div>
       <div className='Item-actions'>
         <button onClick={callbacks.onClick}>
           {props.title}

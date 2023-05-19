@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Item from "../item";
 import './style.css';
 
-function List({list, onClick}){
+function List({ list, onClick, title, isModalOpen }) {
   return (
     <div className='List'>{
       list.map(item =>
         <div key={item.code} className='List-item'>
-          <Item title={'Добавить'} item={item} onClick={onClick}/>
+          <Item title={title} item={item} onClick={onClick} isModalOpen={isModalOpen} />
         </div>
       )}
     </div>
@@ -23,7 +23,7 @@ List.propTypes = {
 };
 
 List.defaultProps = {
-  onClick: () => {},
+  onClick: () => { },
 }
 
 export default React.memo(List);

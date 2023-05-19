@@ -24,8 +24,12 @@
   padding: 20px 20px 20px 10px;
 }
 
-.Item-price {
-  display: inline;
+.Item-descr {
+  display: flex;
   padding: 20px 12px 19px 21px;
   white-space: nowrap;
+}
+
+.Item-qty {
+  margin-left: 62px;
 }
