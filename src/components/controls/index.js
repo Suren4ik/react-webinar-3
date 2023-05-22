@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from 'prop-types';
 import './style.css';
 import { addSpacesToNumber, plural } from "../../utils";
+import item from "../item";
 
 function Controls({list, onOpenModal}) {
 
-  const count = list.reduce((acc, item) => item.count + acc, 0);
+  const count = list.filter(item => item.selected).length;
   const price = list.filter(item => item.selected).reduce((acc, item) => (item.count * item.price) + acc, 0);
   const countText = `${count} ${plural(count, {one: 'товар', few: 'товара', many: 'товаров'})}`;
   const formattedPrice = `${addSpacesToNumber(price)} ₽`;
